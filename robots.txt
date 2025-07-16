@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/vendor/
+
+Sitemap: https://srivinayagatextiles.in/sitemap.xml

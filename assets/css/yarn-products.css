@@ -1,0 +1,126 @@
+/*--------------------------------------------------------------
+# Yarn Products Section
+--------------------------------------------------------------*/
+.yarn-products {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.yarn-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #eef0ef;
+}
+
+.yarn-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.yarn-img {
+  overflow: hidden;
+  height: 200px;
+}
+
+.yarn-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.yarn-card:hover .yarn-img img {
+  transform: scale(1.05);
+}
+
+.yarn-content {
+  padding: 25px 25px 30px;
+}
+
+.yarn-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2e3135;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.yarn-content h3::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #3fbbc0;
+  bottom: 0;
+  left: 0;
+}
+
+.yarn-content p {
+  color: #6b7b8d;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.yarn-specs {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.yarn-specs li {
+  padding: 5px 0;
+  color: #6b7b8d;
+  display: flex;
+  align-items: flex-start;
+}
+
+.yarn-specs i {
+  color: #3fbbc0;
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.btn-learn-more {
+  display: inline-block;
+  color: #3fbbc0;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  border-bottom: 2px solid #3fbbc0;
+  padding-bottom: 2px;
+}
+
+.btn-learn-more:hover {
+  color: #65c9cd;
+  border-color: #65c9cd;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .yarn-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .yarn-products {
+    padding: 60px 0;
+  }
+  
+  .yarn-img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .yarn-img {
+    height: 220px;
+  }
+}

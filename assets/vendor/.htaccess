@@ -1,0 +1,17 @@
+# Deny access to all files in this directory
+Order Allow,Deny
+Deny from all
+
+# Disable directory browsing
+Options -Indexes
+
+# Disable script execution
+<FilesMatch "\.(php|pl|py|jsp|asp|htm|html|shtml|sh|cgi)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+# Return 403 Forbidden header
+<IfModule mod_headers.c>
+Header set Status "403 Forbidden"
+</IfModule>
