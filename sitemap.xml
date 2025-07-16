@@ -8,7 +8,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://srivinayagatextiles.in/</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -21,7 +21,7 @@
   <!-- Main Pages -->
   <url>
     <loc>https://srivinayagatextiles.in/about</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -33,7 +33,7 @@
   <!-- Products Page -->
   <url>
     <loc>https://srivinayagatextiles.in/products</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,7 +41,7 @@
   <!-- Yarn Products - High Priority -->
   <url>
     <loc>https://srivinayagatextiles.in/Yarn-Products</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -54,21 +54,21 @@
   <!-- Product Categories -->
   <url>
     <loc>https://srivinayagatextiles.in/Hosiery-Fabrics</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://srivinayagatextiles.in/Woven-Fabrics</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://srivinayagatextiles.in/Hosiery-Special-Blend-Fabrics</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -76,7 +76,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://srivinayagatextiles.in/contact</loc>
-    <lastmod>2023-11-15</lastmod>
+    <lastmod>2025-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -84,42 +84,3 @@
       <image:caption>Contact Sri Vinayaga Textiles - Get in Touch</image:caption>
     </image:image>
   </url>
-
-  <!-- Error Pages -->
-  <url>
-    <loc>https://srivinayagatextiles.in/error/400.html</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://srivinayagatextiles.in/error/401.html</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://srivinayagatextiles.in/error/403.html</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://srivinayagatextiles.in/error/404.html</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://srivinayagatextiles.in/error/500.html</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- End of sitemap -->
-</urlset>

@@ -1,28 +1,31 @@
 # ===================================
 # Server Configuration
 # ===================================
+
+ErrorDocument 404 /error/404.html
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
     # Force HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     
     # Remove www from URL
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
     
     # Remove trailing slashes
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    # RewriteCond %{REQUEST_FILENAME} !-d
+    # RewriteRule ^(.*)/$ /$1 [L,R=301]
     
     # Redirect index.php to root
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.php [NC]
-    RewriteRule ^ %1 [R=301,L]
+    # RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.php [NC]
+    # RewriteRule ^ %1 [R=301,L]
     
     # Remove .html extension from URLs
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP
-    RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+    # RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP
+    # RewriteRule ^(.+)\.html$ /$1 [R=301,L]
     
     # Internally add .html extension
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -59,7 +62,7 @@
     
     # Content Security Policy
     # Note: Update these directives based on your specific requirements
-    # Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:;"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:;"
 </IfModule>
 
 # ===================================
@@ -151,6 +154,24 @@
 # ===================================
 # Error Pages
 # ===================================
+ErrorDocument 400 "Error 400 - Bad Request"
+ErrorDocument 401 "Error 401 - Unauthorized"
+ErrorDocument 403 "Error 403 - Forbidden"
+ErrorDocument 404 "Error 404 - Not Found"
+ErrorDocument 500 "Error 500 - Internal Server Error"
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^error/400\.html$ - [R=400,L]
+    RewriteRule ^error/401\.html$ - [R=401,L]
+    RewriteRule ^error/403\.html$ - [R=403,L]
+    RewriteRule ^error/404\.html$ - [R=404,L]
+    RewriteRule ^error/500\.html$ - [R=500,L]
+</IfModule>
+
+# Custom Error Pages
 ErrorDocument 400 /error/400.html
 ErrorDocument 401 /error/401.html
 ErrorDocument 403 /error/403.html
