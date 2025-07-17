@@ -1,21 +1,27 @@
 User-agent: *
 Allow: /
 
-# Disallow all non-HTML files
+# Sitemap reference
+Sitemap: https://srivinayagatextiles.in/sitemap.xml
+
+# Disallow non-essential files
 Disallow: /*.css$
 Disallow: /*.js$
-Disallow: /*.jpg$
-Disallow: /*.jpeg$
-Disallow: /*.png$
-Disallow: /*.gif$
+Disallow: /*.php$
+Disallow: /*?*
 Disallow: /*.pdf$
 Disallow: /*.zip$
+Disallow: /*.xml$
+Disallow: /*.json$
 
-# Allow specific assets that need to be indexed
-Allow: /assets/css/*.css
-Allow: /assets/js/*.js
-Allow: /assets/img/*.jpg
-Allow: /assets/img/*.png
+# Allow essential assets
+Allow: /assets/css/*.css$
+Allow: /assets/js/*.js$
+Allow: /assets/img/*.jpg$
+Allow: /assets/img/*.png$
+Allow: /assets/img/*.webp$
+
+# Crawl-delay: 10  # Uncomment if needed to reduce server load
 
 # Disallow admin and system files
 Disallow: /admin/
