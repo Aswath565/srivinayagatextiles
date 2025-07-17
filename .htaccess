@@ -4,6 +4,12 @@
 
 ErrorDocument 404 /404.html
 
+# Ensure sitemap.xml is accessible
+<Files "sitemap.xml">
+  Header set Content-Type "application/xml; charset=utf-8"
+  Require all granted
+</Files>
+
 # Force HTTPS and non-www
 <IfModule mod_rewrite.c>
     RewriteEngine On
