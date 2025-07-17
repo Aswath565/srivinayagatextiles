@@ -1242,6 +1242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About us</a></li>
             <li><a href="/products">Products</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
 
@@ -1258,18 +1259,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="col-lg-4 col-md-12">
           <h4 class="mb-3">Quick Contact</h4>
-          <form id="quickContactForm" class="quick-contact-form">
+          <form id="quickContactForm" action="https://api.web3forms.com/submit" method="POST" class="quick-contact-form">
+            <input type="hidden" name="access_key" value="e33b215a-847b-4634-971d-44d600edf686">
+            <input type="hidden" name="subject" value="Quick Contact Form Submission - Sri Vinayaga Textiles">
+            <input type="hidden" name="from_name" value="Sri Vinayaga Textiles Quick Contact">
+            <input type="hidden" name="redirect" value="https://srivinayagatextiles.in/thank-you">
+            <input type="checkbox" name="botcheck" class="d-none" style="display: none;">
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Your Email" required>
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
             </div>
             <div class="mb-3">
-              <input type="tel" class="form-control" placeholder="Phone (Optional)">
+              <input type="tel" name="phone" class="form-control" placeholder="Phone (Optional)">
             </div>
             <div class="mb-3">
-              <textarea class="form-control" rows="3" placeholder="Your Message" required></textarea>
+              <input type="text" name="company" class="form-control" placeholder="Company Name" required>
+            </div>
+            <div class="mb-3">
+              <textarea name="message" class="form-control" rows="3" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary w-100">Send Message</button>
           </form>

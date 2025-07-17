@@ -189,6 +189,76 @@
   }
   window.addEventListener('load', aosInit);
 
+  // Handle Web3Forms Submission
+  function handleWeb3Form(formElement, successMessage = 'Message sent successfully!') {
+    if (!formElement) return;
+    
+    formElement.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const formAction = this.action;
+      const redirectUrl = this.querySelector('input[name="redirect"]')?.value;
+
+      // Add a status message element if it doesn't exist
+      let statusMsg = this.querySelector('.status-message');
+      if (!statusMsg) {
+        statusMsg = document.createElement('div');
+        statusMsg.className = 'status-message text-center py-2';
+        submitBtn.parentNode.insertBefore(statusMsg, submitBtn.nextSibling);
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      statusMsg.textContent = '';
+      statusMsg.style.display = 'block';
+
+      fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(async (response) => {
+        const data = await response.json();
+        if (response.ok && data.success) {
+          statusMsg.textContent = successMessage;
+          statusMsg.style.color = 'green';
+          formElement.reset();
+          
+          if (redirectUrl) {
+            setTimeout(() => {
+              window.location.href = redirectUrl;
+            }, 1500);
+          }
+        } else {
+          throw new Error(data.message || 'Form submission failed');
+        }
+      })
+      .catch((error) => {
+        statusMsg.textContent = error.message || 'An error occurred. Please try again.';
+        statusMsg.style.color = 'red';
+        console.error('Error:', error);
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        setTimeout(() => {
+          statusMsg.style.display = 'none';
+        }, 5000);
+      });
+    });
+  }
+
+  // Initialize form handlers
+  handleWeb3Form(document.getElementById('contactForm'));
+  handleWeb3Form(
+    document.getElementById('quickContactForm'),
+    'Thank you for your message! We will get back to you soon.'
+  );
+
   /**
    * Auto generate the carousel indicators
    */
