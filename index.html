@@ -104,54 +104,7 @@
   <link rel="icon" href="assets/img/logo.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo.png">
   
-  <!-- LocalBusiness Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Sri Vinayaga Textiles - Yarn Supplier Tiruppur",
-    "image": "https://srivinayagatextiles.in/assets/img/logo.png",
-    "@id": "https://srivinayagatextiles.in/#localbusiness",
-    "url": "https://srivinayagatextiles.in",
-    "telephone": "+91 95787 74494",
-    "priceRange": "₹₹",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "28, V.O.C Nagar, 1st Cross Street",
-      "addressLocality": "Tiruppur",
-      "postalCode": "641603",
-      "addressRegion": "Tamil Nadu",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 11.1085,
-      "longitude": 77.3411
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/srivinayagatextiles",
-      "https://www.instagram.com/srivinayagatextiles",
-      "https://www.linkedin.com/company/sri-vinayaga-textiles"
-    ],
-    "description": "Leading yarn supplier in Tiruppur with premium cotton, polyester, and specialty yarns. Best quality yarn supplier for knitting, weaving & hosiery. Trusted by global textile brands for 20+ years.",
-    "keywords": "yarn tiruppur, yarn supplier tiruppur, cotton yarn tiruppur, polyester yarn tiruppur, specialty yarn tiruppur, yarn supplier india, wholesale yarn tiruppur"
-  }
-  </script>
+
   <!-- Additional LocalBusiness Information -->
   <script type="application/ld+json">
   {
@@ -228,7 +181,18 @@
         "itemOffered": {
           "@type": "Product",
           "name": "Premium Cotton Yarn",
-          "description": "High-quality cotton yarn manufactured in Tiruppur for knitting and weaving applications"
+          "description": "High-quality cotton yarn manufactured in Tiruppur for knitting and weaving applications",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": "350",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "LocalBusiness",
+              "name": "Sri Vinayaga Textiles"
+            }
+          }
         }
       },
       {
@@ -236,7 +200,18 @@
         "itemOffered": {
           "@type": "Product",
           "name": "Polyester Yarn",
-          "description": "Durable polyester yarn for various textile applications"
+          "description": "Durable polyester yarn for various textile applications",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": "300",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "LocalBusiness",
+              "name": "Sri Vinayaga Textiles"
+            }
+          }
         }
       },
       {
@@ -244,7 +219,18 @@
         "itemOffered": {
           "@type": "Product",
           "name": "Specialty Blend Yarns",
-          "description": "Custom blend yarns for specialized textile applications"
+          "description": "Custom blend yarns for specialized textile applications",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": "400",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "LocalBusiness",
+              "name": "Sri Vinayaga Textiles"
+            }
+          }
         }
       }
     ],
@@ -261,6 +247,7 @@
               "@type": "Product",
               "name": "Hosiery Yarn",
               "description": "Premium quality hosiery yarn for knitting applications",
+              "image": "https://srivinayagatextiles.in/assets/img/portfolio/yarn-1.jpg",
               "brand": {
                 "@type": "Brand",
                 "name": "Sri Vinayaga Textiles"
@@ -272,9 +259,36 @@
                 "priceValidUntil": "2025-12-31",
                 "itemCondition": "https://schema.org/NewCondition",
                 "availability": "https://schema.org/InStock",
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "INR"
+                  },
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "IN"
+                  }
+                },
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "merchantReturnDays": 7,
+                  "returnMethod": "https://schema.org/ReturnByMail",
+                  "returnFees": "https://schema.org/FreeReturn"
+                },
                 "seller": {
                   "@type": "LocalBusiness",
-                  "name": "Sri Vinayaga Textiles"
+                  "name": "Sri Vinayaga Textiles",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "28, V.O.C Nagar, 1st Cross Street",
+                    "addressLocality": "Tiruppur",
+                    "addressRegion": "Tamil Nadu",
+                    "postalCode": "641603",
+                    "addressCountry": "India"
+                  }
                 }
               }
             },
@@ -282,6 +296,7 @@
               "@type": "Product",
               "name": "Knitting Yarn",
               "description": "High-quality knitting yarn for various textile applications",
+              "image": "https://srivinayagatextiles.in/assets/img/portfolio/yarn-2.jpg",
               "brand": {
                 "@type": "Brand",
                 "name": "Sri Vinayaga Textiles"
@@ -293,9 +308,36 @@
                 "priceValidUntil": "2025-12-31",
                 "itemCondition": "https://schema.org/NewCondition",
                 "availability": "https://schema.org/InStock",
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "INR"
+                  },
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "IN"
+                  }
+                },
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "merchantReturnDays": 7,
+                  "returnMethod": "https://schema.org/ReturnByMail",
+                  "returnFees": "https://schema.org/FreeReturn"
+                },
                 "seller": {
                   "@type": "LocalBusiness",
-                  "name": "Sri Vinayaga Textiles"
+                  "name": "Sri Vinayaga Textiles",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "28, V.O.C Nagar, 1st Cross Street",
+                    "addressLocality": "Tiruppur",
+                    "addressRegion": "Tamil Nadu",
+                    "postalCode": "641603",
+                    "addressCountry": "India"
+                  }
                 }
               }
             },
@@ -303,6 +345,7 @@
               "@type": "Product",
               "name": "Weaving Yarn",
               "description": "Premium quality weaving yarn for textile supply",
+              "image": "https://srivinayagatextiles.in/assets/img/portfolio/yarn-3.jpg",
               "brand": {
                 "@type": "Brand",
                 "name": "Sri Vinayaga Textiles"
@@ -314,9 +357,36 @@
                 "priceValidUntil": "2025-12-31",
                 "itemCondition": "https://schema.org/NewCondition",
                 "availability": "https://schema.org/InStock",
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "INR"
+                  },
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "IN"
+                  }
+                },
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "merchantReturnDays": 7,
+                  "returnMethod": "https://schema.org/ReturnByMail",
+                  "returnFees": "https://schema.org/FreeReturn"
+                },
                 "seller": {
                   "@type": "LocalBusiness",
-                  "name": "Sri Vinayaga Textiles"
+                  "name": "Sri Vinayaga Textiles",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "28, V.O.C Nagar, 1st Cross Street",
+                    "addressLocality": "Tiruppur",
+                    "addressRegion": "Tamil Nadu",
+                    "postalCode": "641603",
+                    "addressCountry": "India"
+                  }
                 }
               }
             },
@@ -324,6 +394,7 @@
               "@type": "Product",
               "name": "Specialty Yarn",
               "description": "Custom and specialty yarns for unique textile applications",
+              "image": "https://srivinayagatextiles.in/assets/img/portfolio/cotton-yarn.jpg",
               "brand": {
                 "@type": "Brand",
                 "name": "Sri Vinayaga Textiles"
@@ -335,9 +406,36 @@
                 "priceValidUntil": "2025-12-31",
                 "itemCondition": "https://schema.org/NewCondition",
                 "availability": "https://schema.org/InStock",
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "INR"
+                  },
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "IN"
+                  }
+                },
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "merchantReturnDays": 7,
+                  "returnMethod": "https://schema.org/ReturnByMail",
+                  "returnFees": "https://schema.org/FreeReturn"
+                },
                 "seller": {
                   "@type": "LocalBusiness",
-                  "name": "Sri Vinayaga Textiles"
+                  "name": "Sri Vinayaga Textiles",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "28, V.O.C Nagar, 1st Cross Street",
+                    "addressLocality": "Tiruppur",
+                    "addressRegion": "Tamil Nadu",
+                    "postalCode": "641603",
+                    "addressCountry": "India"
+                  }
                 }
               }
             }
