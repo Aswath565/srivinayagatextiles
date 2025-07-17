@@ -2,35 +2,37 @@
 # Server Configuration
 # ===================================
 
-ErrorDocument 404 /error/404.html
+ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # Force HTTPS
-    # RewriteCond %{HTTPS} off
-    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-    
-    # Remove www from URL
-    # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-    
-    # Remove trailing slashes
-    # RewriteCond %{REQUEST_FILENAME} !-d
-    # RewriteRule ^(.*)/$ /$1 [L,R=301]
-    
-    # Redirect index.php to root
-    # RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.php [NC]
-    # RewriteRule ^ %1 [R=301,L]
+    # Prevent /index redirect
+    RewriteCond %{THE_REQUEST} /index(?:.html)? [NC]
+    RewriteRule ^(.*)index(?:.html)?$ /$1 [L,R=301,NC]
     
     # Remove .html extension from URLs
-    # RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP
-    # RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.html[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,L]
     
-    # Internally add .html extension
+    # Add .html extension internally
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}.html -f
-    RewriteRule ^(.+)$ $1.html [L]
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^/]+)/?$ $1.html [L]
+    
+    # Handle subdirectories
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(.+?)/?$ $1.html [L]
+    
+    # Redirect old .html URLs to clean URLs (only if not already redirected)
+    RewriteCond %{ENV:REDIRECT_STATUS} ^$
+    RewriteCond %{REQUEST_URI} \.html$
+    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+    
+    # Remove trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [R=301,L]
 </IfModule>
 
 # ===================================

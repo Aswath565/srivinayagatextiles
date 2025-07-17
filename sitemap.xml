@@ -2,13 +2,12 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
         https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Homepage -->
   <url>
-    <loc>https://srivinayagatextiles.in/</loc>
-    <lastmod>2025-07-16</lastmod>
+    <loc>https://srivinayagatextiles.in</loc>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -21,7 +20,7 @@
   <!-- Main Pages -->
   <url>
     <loc>https://srivinayagatextiles.in/about</loc>
-    <lastmod>2025-07-16</lastmod>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -33,17 +32,17 @@
   <!-- Products Page -->
   <url>
     <loc>https://srivinayagatextiles.in/products</loc>
-    <lastmod>2025-07-16</lastmod>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 
   <!-- Yarn Products - High Priority -->
   <url>
-    <loc>https://srivinayagatextiles.in/Yarn-Products</loc>
-    <lastmod>2025-07-16</lastmod>
+    <loc>https://srivinayagatextiles.in/yarn-products</loc>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
     <image:image>
       <image:loc>https://srivinayagatextiles.in/assets/img/portfolio/yarn.jpg</image:loc>
       <image:caption>Premium Yarn Products from Tiruppur's Top Manufacturer</image:caption>
@@ -53,30 +52,45 @@
   
   <!-- Product Categories -->
   <url>
-    <loc>https://srivinayagatextiles.in/Hosiery-Fabrics</loc>
-    <lastmod>2025-07-16</lastmod>
+    <loc>https://srivinayagatextiles.in/woven-fabrics</loc>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://srivinayagatextiles.in/assets/img/portfolio/woven.jpg</image:loc>
+      <image:caption>Premium Woven Fabrics Collection - Sri Vinayaga Textiles</image:caption>
+      <image:title>Woven Fabrics - Sri Vinayaga Textiles</image:title>
+    </image:image>
   </url>
   
   <url>
-    <loc>https://srivinayagatextiles.in/Woven-Fabrics</loc>
-    <lastmod>2025-07-16</lastmod>
+    <loc>https://srivinayagatextiles.in/hosiery-fabrics</loc>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://srivinayagatextiles.in/assets/img/portfolio/hosiery.jpg</image:loc>
+      <image:caption>Premium Hosiery Fabrics - Comfort &amp; Quality</image:caption>
+      <image:title>Hosiery Fabrics - Sri Vinayaga Textiles</image:title>
+    </image:image>
   </url>
   
   <url>
-    <loc>https://srivinayagatextiles.in/Hosiery-Special-Blend-Fabrics</loc>
-    <lastmod>2025-07-16</lastmod>
+    <loc>https://srivinayagatextiles.in/hosiery-special-blend-fabrics</loc>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://srivinayagatextiles.in/assets/img/portfolio/hosiery-special-blend.jpg</image:loc>
+      <image:caption>Special Blend Fabrics for Unique Textile Solutions</image:caption>
+      <image:title>Special Blend Fabrics - Sri Vinayaga Textiles</image:title>
+    </image:image>
   </url>
 
   <!-- Contact Page -->
   <url>
     <loc>https://srivinayagatextiles.in/contact</loc>
-    <lastmod>2025-07-16</lastmod>
+    <lastmod>2025-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
