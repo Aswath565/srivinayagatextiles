@@ -7,32 +7,49 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # Prevent /index redirect
-    RewriteCond %{THE_REQUEST} /index(?:.html)? [NC]
-    RewriteRule ^(.*)index(?:.html)?$ /$1 [L,R=301,NC]
+    # Handle index files - redirect to parent directory with 301
+    RewriteCond %{THE_REQUEST} /index(\.[a-z]{2,5})?[\s?] [NC]
+    RewriteRule ^(.*?/)?index(\.[a-z]{2,5})?$ /$1 [R=301,L]
+    
+    # Redirect direct requests for directories to remove trailing slash with 301
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteRule ^(.*)/$ /$1 [R=301,L]
     
     # Remove .html extension from URLs
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.html[\s?] [NC]
     RewriteRule ^ /%1 [R=301,L]
     
-    # Add .html extension internally
+    # Add .html extension internally if file exists
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}\.html -f
-    RewriteRule ^([^/]+)/?$ $1.html [L]
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f [NC]
+    RewriteRule ^(.*?)/?$ $1.html [L]
     
-    # Handle subdirectories
+    # Handle direct .html requests (shouldn't be needed but just in case)
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}\.html -f
-    RewriteRule ^(.+?)/?$ $1.html [L]
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
     
-    # Redirect old .html URLs to clean URLs (only if not already redirected)
-    RewriteCond %{ENV:REDIRECT_STATUS} ^$
-    RewriteCond %{REQUEST_URI} \.html$
-    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+    # Block access to sensitive directories and files
+    RewriteRule ^(\.git|vendor|node_modules|composer\.json|package\.json|README\.md) - [F,L,NC]
     
-    # Remove trailing slashes
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)/$ /$1 [R=301,L]
+    # Block access to specific file types
+    <FilesMatch "^(?:\.|composer\.json|package\.json|README\.md|.*\.(?:log|sql|env|gitignore))$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+    
+    # Handle 404 errors
+    ErrorDocument 404 /404.html
+    
+    # Prevent directory listing
+    Options -Indexes
+    
+    # Set default character set
+    AddDefaultCharset UTF-8
+    
+    # Set server timezone
+    SetEnv TZ Asia/Kolkata
 </IfModule>
 
 # ===================================
