@@ -4,6 +4,7 @@
 
 ErrorDocument 404 /404.html
 
+# Force HTTPS and non-www
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
@@ -58,6 +59,13 @@ ErrorDocument 404 /404.html
     
     # Handle 404 errors
     ErrorDocument 404 /404.html
+</IfModule>
+
+# Force HTTPS and non-www
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^www\. [NC]
+    RewriteRule (.*) https://srivinayagatextiles.in/$1 [R=301,L]
 </IfModule>
 
 # ===================================
