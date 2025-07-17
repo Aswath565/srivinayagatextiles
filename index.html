@@ -130,19 +130,26 @@
       "longitude": 77.3411
     },
     "priceRange": "\u20B9\u20B9",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "https://schema.org/Monday",
+          "https://schema.org/Tuesday",
+          "https://schema.org/Wednesday",
+          "https://schema.org/Thursday",
+          "https://schema.org/Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["https://schema.org/Saturday"],
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/srivinayagatextiles",
       "https://www.instagram.com/srivinayagatextiles",
@@ -150,11 +157,30 @@
       "https://twitter.com/srivinayagatextiles"
     ],
     "award": [
-      "ISO 9001:2015 Certified",
-      "ISO 14001:2015 Certified",
-      "Oeko-Tex Standard 100 Certified"
+      {
+        "@type": "Thing",
+        "name": "ISO 9001:2015 Certified"
+      },
+      {
+        "@type": "Thing",
+        "name": "ISO 14001:2015 Certified"
+      },
+      {
+        "@type": "Thing",
+        "name": "Oeko-Tex Standard 100 Certified"
+      }
     ],
-    "foundingDate": "2003",
+    "foundingDate": "2003-01-01",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Tirupur, India",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tirupur",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      }
+    },
     "founder": {
       "@type": "Person",
       "name": "Sakthivel V",
@@ -195,8 +221,8 @@
         "contactType": "customer service",
         "telephone": "+91 95787 74494",
         "email": "srivinayagatextiles24@gmail.com",
-        "availableLanguage": ["English", "Tamil", "Hindi"],
-        "contactOption": ["TollFree"]
+        "availableLanguage": ["en", "ta", "hi"],
+        "contactOption": ["https://schema.org/TollFree"]
       },
       {
         "@type": "ContactPoint",
@@ -278,17 +304,23 @@
       }
     ],
     "areaServed": [
-      {"@type": "Country", "name": "India"},
-      {"@type": "Country", "name": "United States"},
-      {"@type": "Country", "name": "United Kingdom"},
-      {"@type": "Country", "name": "Germany"},
-      {"@type": "Country", "name": "France"},
-      {"@type": "Country", "name": "Canada"},
-      {"@type": "Country", "name": "Australia"},
-      {"@type": "Country", "name": "United Arab Emirates"},
-      {"@type": "Country", "name": "Saudi Arabia"},
-      {"@type": "Country", "name": "Singapore"}
-      "maxValue": "50"
+      {"@type": "Country", "name": "India", "sameAs": "https://en.wikipedia.org/wiki/India"},
+      {"@type": "Country", "name": "United States", "sameAs": "https://en.wikipedia.org/wiki/United_States"},
+      {"@type": "Country", "name": "United Kingdom", "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"},
+      {"@type": "Country", "name": "Germany", "sameAs": "https://en.wikipedia.org/wiki/Germany"},
+      {"@type": "Country", "name": "France", "sameAs": "https://en.wikipedia.org/wiki/France"},
+      {"@type": "Country", "name": "Spain", "sameAs": "https://en.wikipedia.org/wiki/Spain"},
+      {"@type": "Country", "name": "Italy", "sameAs": "https://en.wikipedia.org/wiki/Italy"},
+      {"@type": "Country", "name": "Canada", "sameAs": "https://en.wikipedia.org/wiki/Canada"},
+      {"@type": "Country", "name": "Australia", "sameAs": "https://en.wikipedia.org/wiki/Australia"},
+      {"@type": "Country", "name": "United Arab Emirates", "sameAs": "https://en.wikipedia.org/wiki/United_Arab_Emirates"},
+      {"@type": "Country", "name": "Saudi Arabia", "sameAs": "https://en.wikipedia.org/wiki/Saudi_Arabia"},
+      {"@type": "Country", "name": "Singapore", "sameAs": "https://en.wikipedia.org/wiki/Singapore"}
+    ],
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 10,
+      "maxValue": 50
     },
     "knowsAbout": [
       "Textile Supply",

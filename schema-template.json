@@ -1,0 +1,130 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sri Vinayaga Textiles",
+  "image": "https://srivinayagatextiles.in/assets/img/logo.png",
+  "@id": "https://srivinayagatextiles.in/#localbusiness",
+  "url": "https://srivinayagatextiles.in/",
+  "telephone": "+91 95787 74494",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "28, V.O.C Nagar, 1st Cross Street",
+    "addressLocality": "Tirupur",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "641603",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 11.1085,
+    "longitude": 77.3411
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["https://schema.org/Saturday"],
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/srivinayagatextiles",
+    "https://www.instagram.com/srivinayagatextiles",
+    "https://www.linkedin.com/company/sri-vinayaga-textiles"
+  ],
+  "award": [
+    {
+      "@type": "Thing",
+      "name": "ISO 9001:2015 Certified"
+    },
+    {
+      "@type": "Thing",
+      "name": "ISO 14001:2015 Certified"
+    },
+    {
+      "@type": "Thing",
+      "name": "Oeko-Tex Standard 100 Certified"
+    }
+  ],
+  "foundingDate": "2003-01-01",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Tirupur, India",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tirupur",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    }
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Sakthivel V",
+    "jobTitle": "Founder & CEO"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Sri Vinayaga Textiles",
+    "logo": "https://srivinayagatextiles.in/assets/img/logo.png",
+    "description": "Premium quality yarns and fabrics supplier in India"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+91 95787 74494",
+      "email": "srivinayagatextiles24@gmail.com",
+      "availableLanguage": ["en", "ta", "hi"],
+      "contactOption": ["https://schema.org/TollFree"]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+91 95787 74494",
+      "email": "srivinayagatextiles24@gmail.com",
+      "contactOption": ["https://schema.org/HearingImpairedSupported"]
+    }
+  ],
+  "areaServed": [
+    {"@type": "Country", "name": "India", "sameAs": "https://en.wikipedia.org/wiki/India"},
+    {"@type": "Country", "name": "United States", "sameAs": "https://en.wikipedia.org/wiki/United_States"},
+    {"@type": "Country", "name": "United Kingdom", "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"},
+    {"@type": "Country", "name": "Germany", "sameAs": "https://en.wikipedia.org/wiki/Germany"},
+    {"@type": "Country", "name": "France", "sameAs": "https://en.wikipedia.org/wiki/France"},
+    {"@type": "Country", "name": "Spain", "sameAs": "https://en.wikipedia.org/wiki/Spain"},
+    {"@type": "Country", "name": "Italy", "sameAs": "https://en.wikipedia.org/wiki/Italy"},
+    {"@type": "Country", "name": "Canada", "sameAs": "https://en.wikipedia.org/wiki/Canada"},
+    {"@type": "Country", "name": "Australia", "sameAs": "https://en.wikipedia.org/wiki/Australia"},
+    {"@type": "Country", "name": "United Arab Emirates", "sameAs": "https://en.wikipedia.org/wiki/United_Arab_Emirates"},
+    {"@type": "Country", "name": "Saudi Arabia", "sameAs": "https://en.wikipedia.org/wiki/Saudi_Arabia"},
+    {"@type": "Country", "name": "Singapore", "sameAs": "https://en.wikipedia.org/wiki/Singapore"}
+  ],
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "minValue": 10,
+    "maxValue": 50
+  },
+  "knowsAbout": [
+    "Textile Supply",
+    "Cotton Yarn Production",
+    "Polyester Yarn Blending",
+    "Viscose Yarn Processing",
+    "Textile Quality Control",
+    "B2B Yarn Supply Chain",
+    "Tiruppur Textile Industry",
+    "Yarn Export from India"
+  ]
+}
