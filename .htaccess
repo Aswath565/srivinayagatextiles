@@ -7,49 +7,57 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # Handle index files - redirect to parent directory with 301
-    RewriteCond %{THE_REQUEST} /index(\.[a-z]{2,5})?[\s?] [NC]
-    RewriteRule ^(.*?/)?index(\.[a-z]{2,5})?$ /$1 [R=301,L]
+    # Set case-insensitive matching for URLs
+    RewriteMap tolower int:tolower
     
-    # Redirect direct requests for directories to remove trailing slash with 301
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteCond %{REQUEST_URI} !/$
+    # Prevent /index redirect
+    RewriteCond %{THE_REQUEST} /index(?:\.html)?\sHTTP [NC]
+    RewriteRule ^(.*)index(?:\.html)?$ /$1 [L,R=301,NC]
+    
+    # Handle requests with .html extension (redirect to clean URL)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html\ HTTP/
+    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+    
+    # Handle clean URLs (case-insensitive)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /${tolower:$1} [R=301,L,NE]
+    
+    # Map clean URLs to actual files (case-insensitive)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^hosiery-fabrics/?$ Hosiery-Fabrics.html [L,NC]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^woven-fabrics/?$ Woven-Fabrics.html [L,NC]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^yarn-products/?$ Yarn-Products.html [L,NC]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^hosiery-special-blend-fabrics/?$ Hosiery-Special-Blend-Fabrics.html [L,NC]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^about/?$ about.html [L,NC]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^contact/?$ contact.html [L,NC]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^products/?$ products.html [L,NC]
+    
+    # Remove trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/$ /$1 [R=301,L]
-    
-    # Remove .html extension from URLs
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.html[\s?] [NC]
-    RewriteRule ^ /%1 [R=301,L]
-    
-    # Add .html extension internally if file exists
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{DOCUMENT_ROOT}/$1.html -f [NC]
-    RewriteRule ^(.*?)/?$ $1.html [L]
-    
-    # Handle direct .html requests (shouldn't be needed but just in case)
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}.html -f
-    RewriteRule ^(.*)$ $1.html [L]
-    
-    # Block access to sensitive directories and files
-    RewriteRule ^(\.git|vendor|node_modules|composer\.json|package\.json|README\.md) - [F,L,NC]
-    
-    # Block access to specific file types
-    <FilesMatch "^(?:\.|composer\.json|package\.json|README\.md|.*\.(?:log|sql|env|gitignore))$">
-        Order allow,deny
-        Deny from all
-    </FilesMatch>
     
     # Handle 404 errors
     ErrorDocument 404 /404.html
-    
-    # Prevent directory listing
-    Options -Indexes
-    
-    # Set default character set
-    AddDefaultCharset UTF-8
-    
-    # Set server timezone
-    SetEnv TZ Asia/Kolkata
 </IfModule>
 
 # ===================================
