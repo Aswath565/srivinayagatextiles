@@ -1,5 +1,26 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
+
+# Disallow all non-HTML files
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.pdf$
+Disallow: /*.zip$
+
+# Allow specific assets that need to be indexed
+Allow: /assets/css/*.css
+Allow: /assets/js/*.js
+Allow: /assets/img/*.jpg
+Allow: /assets/img/*.png
+
+# Disallow admin and system files
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /config/
+Disallow: /vendor/
 
 Sitemap: https://srivinayagatextiles.in/sitemap.xml
