@@ -26,6 +26,7 @@
     <image:image>
       <image:loc>https://srivinayagatextiles.in/assets/img/about.jpg</image:loc>
       <image:caption>About Sri Vinayaga Textiles - Our Story and Mission</image:caption>
+      <image:title>About Sri Vinayaga Textiles</image:title>
     </image:image>
   </url>
 
@@ -96,6 +97,7 @@
     <image:image>
       <image:loc>https://srivinayagatextiles.in/assets/img/contact.jpg</image:loc>
       <image:caption>Contact Sri Vinayaga Textiles - Get in Touch</image:caption>
+      <image:title>Contact Sri Vinayaga Textiles</image:title>
     </image:image>
   </url>
 </urlset>
