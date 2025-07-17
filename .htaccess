@@ -21,43 +21,64 @@ ErrorDocument 404 /404.html
     RewriteCond %{THE_REQUEST} /index(?:\.html)?\sHTTP [NC]
     RewriteRule ^(.*)index(?:\.html)?$ /$1 [L,R=301,NC]
     
-    # Handle requests with .html extension (redirect to clean URL)
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html\ HTTP/
-    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+    # Remove .html extension from URLs (external redirect)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.html[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,L,NE]
     
-    # Handle clean URLs (case-insensitive)
+    # Map clean URLs to actual files (internal rewrite)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /${tolower:$1} [R=301,L,NE]
+    RewriteCond %{REQUEST_URI} ^/([^.]+)/?$
+    RewriteCond %{DOCUMENT_ROOT}/%1.html -f
+    RewriteRule ^(.*?)/?$ /$1.html [L]
     
-    # Map clean URLs to actual files (case-insensitive)
+    # ===================================
+    # Product Pages (clean URLs)
+    # ===================================
+    
+    # Hosiery Fabrics
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^hosiery-fabrics/?$ Hosiery-Fabrics.html [L,NC]
+    RewriteRule ^hosiery-fabrics/?$ /hosiery-fabrics.html [L,NC]
     
+    # Woven Fabrics
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^woven-fabrics/?$ Woven-Fabrics.html [L,NC]
+    RewriteRule ^woven-fabrics/?$ /woven-fabrics.html [L,NC]
     
+    # Yarn Products
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^yarn-products/?$ Yarn-Products.html [L,NC]
+    RewriteRule ^yarn-products/?$ /yarn-products.html [L,NC]
     
+    # Hosiery Special Blend Fabrics
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^hosiery-special-blend-fabrics/?$ Hosiery-Special-Blend-Fabrics.html [L,NC]
+    RewriteRule ^hosiery-special-blend-fabrics/?$ /hosiery-Special-Blend-Fabrics.html [L,NC]
     
+    # ===================================
+    # Main Pages (clean URLs)
+    # ===================================
+    
+    # About Page
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^about/?$ about.html [L,NC]
+    RewriteRule ^about/?$ /about.html [L,NC]
     
+    # Contact Page
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^contact/?$ contact.html [L,NC]
+    RewriteRule ^contact/?$ /contact.html [L,NC]
     
+    # Products Page
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^products/?$ products.html [L,NC]
+    RewriteRule ^products/?$ /products.html [L,NC]
+    
+    # Home Page (root)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^$ /index.html [L]
     
     # Remove trailing slashes
     RewriteCond %{REQUEST_FILENAME} !-d
